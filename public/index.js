@@ -1,3 +1,16 @@
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { logoutUser } from "./firebase.js";
+
+const auth = getAuth();
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = "auth.html"; // Redirect to login if not logged in
+    }
+});
+
+// Logout button (Optional)
+document.getElementById("logout-btn")?.addEventListener("click", logoutUser);
+
 let taskCount = 0;
 
         function addTask() {
@@ -13,9 +26,9 @@ let taskCount = 0;
             li.className = "flex justify-between items-center p-2 bg-blue-300 text-black font-semibold rounded-md";
 
             li.innerHTML = `
-                 <input type="checkbox" class="task-checkbox" onclick="toggleComplete(this)">
+                 <input type="checkbox" class="accent-green-700 w-6 h-6" onclick="toggleComplete(this)">
                 <span class="flex-1 ml-2 cursor-pointer">${taskText}</span>
-                <button onclick="removeTask(this)" style="color" class="hover:text-red-800 ml-3">✖</button>
+                <button onclick="removeTask(this)" style="color" class="hover:text-red-800 text-2xl font-bold ml-3">&times</button>
             `;
 
 

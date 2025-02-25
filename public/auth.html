@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/firebase.js"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-indigo-900">
+
+    <!To-Do List>
+    <div class="absolute top-4 left-4">
+        <a href="index.html" class="bg-white text-black px-4 py-2 rounded-lg shadow-md hover:bg-gray-200">
+            Back to To-Do List
+        </a>
+    </div>
+
+    <!Auth Page>
+    <div class="w-96 bg-white p-8 rounded-lg shadow-lg text-center">
+        <h2 class="text-2xl font-bold mb-4">Login / Signup</h2>
+        <input type="email" id="email" placeholder="Email" class="w-full px-4 py-2 mb-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="password" id="password" placeholder="Password" class="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button id="signup-btn" class="w-full bg-green-500 text-white py-2 rounded-lg mb-2 hover:bg-green-600">Sign Up</button>
+        <button id="login-btn" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Login</button>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>
