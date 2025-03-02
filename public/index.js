@@ -13,7 +13,7 @@ document.getElementById("logout-btn")?.addEventListener("click", logoutUser);
 
 let taskCount = 0;
 
-        function addTask() {
+        window.addTask = function () {
             let taskInput = document.getElementById("taskInput");
             let taskText = taskInput.value.trim();
 
@@ -28,19 +28,18 @@ let taskCount = 0;
             li.innerHTML = `
                  <input type="checkbox" class="accent-green-700 w-6 h-6" onclick="toggleComplete(this)">
                 <span class="flex-1 ml-2 cursor-pointer">${taskText}</span>
-                <button onclick="removeTask(this)" style="color" class="hover:text-red-800 text-2xl font-bold ml-3">&times</button>
-            `;
+                <button onclick="removeTask(this)" style="color: red;" class="hover:text-red-800 text-2xl font-bold ml-3">&times;</button>`;
 
 
             taskList.appendChild(li);
             taskInput.value = "";
         }
 
-        function removeTask(button) {
+        window.removeTask = function (button) {
             button.parentElement.remove();
             checkCompletion();
         }
-        function toggleComplete(checkbox) {
+        window.toggleComplete = function (checkbox) {
             let task = checkbox.nextElementSibling;
             task.classList.toggle("completed");
             checkCompletion();

@@ -1,1 +1,1 @@
-This is a simple and user-friendly To-Do web application with Firebase authentication and Firestore database integration. Users can add & view their tasks across different categories — All Tasks, Due Tasks and Completed Tasks.
+This is a simple and user-friendly To-Do web application with Firebase authentication . Users can add & view their tasks.
